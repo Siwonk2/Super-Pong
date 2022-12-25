@@ -15,7 +15,7 @@ public class PlayerSelectMenu : Interface
 
    public void multiPlayer(){
       selectSound();
-    PlayerNumber = 2;
+      PlayerNumber = 2;
     SceneManager.LoadScene("Pong");
    }
 

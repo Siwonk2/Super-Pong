@@ -26,7 +26,7 @@ public class PauseMenu : Menu
 }
 
 public override void Resume()
-    {
+    {   Debug.Log("yo");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -38,5 +38,12 @@ public override void Resume()
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
+
+    public override void Restart(){
+        Manager.ResetGame();
+        this.Resume();
+        
+    }
+    
 
 }

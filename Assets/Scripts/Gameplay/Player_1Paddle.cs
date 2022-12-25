@@ -18,6 +18,12 @@ public class Player_1Paddle : Paddle
         else{
             _direction = Vector2.zero;
         }
+
+        if(Input.GetKeyDown(KeyCode.P) && (ball.transform.position.x < -7.0f) && (ball.velocity.x < 0.0f) && Manager.get_Player_1_power_ready() == true)
+            {
+                ball_obj.powerShot();
+                Manager.ClearPlayer1PowerBar();
+            }
     } 
 
     private void FixedUpdate(){

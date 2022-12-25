@@ -1,66 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_2Paddle : Paddle
 {
-    public Rigidbody2D ball;
 
-    public GameManager Manager;
+    private Player_2Movement movement;
 
-    private int PlayerNumber;
+    private int frames = 0;
 
+    public override void Awake()
+    {
+        _rigidbody =  GetComponent<Rigidbody2D>();
+    }
     
 
-
-    public override void Awake(){
-        _rigidbody =  GetComponent<Rigidbody2D>();
-       PlayerNumber = Manager.getPlayerSelectNumber();
-       if(PlayerNumber == 1){
-        _rigidbody.mass = 0.2f;
-        _rigidbody.drag = 3;
-       }
+    public void setMovement(Player_2Movement movementType){
+        movement = movementType;
     }
-    private void FixedUpdate()
-    {
-        if(PlayerNumber == 2){
-            if(_direction.sqrMagnitude != 0 ){
-            _rigidbody.AddForce(_direction * speed);
-            }
-        }
-        else{
-        if(this.ball.velocity.x > 0.0f)
-        {
-            if(this.ball.position.y > this.transform.position.y){
-                _rigidbody.AddForce(Vector2.up * this.speed);
-            }
-            else if(this.ball.position.y < this.transform.position.y){
-                _rigidbody.AddForce(Vector2.down * this.speed);
-            }
-        }
-        else
-        {
-            if(this.transform.position.y > 0.0f){
-                _rigidbody.AddForce(Vector2.down * this.speed);
-            }
 
-             else if(this.transform.position.y < 0.0f){
-                _rigidbody.AddForce(Vector2.up* this.speed);
-            }
-        }
+    private void Update(){
+         if(Input.GetKeyDown(KeyCode.M) && (ball.transform.position.x > 7.0f) && (ball.velocity.x > 0.0f) && Manager.get_Player_2_power_ready() == true)
+                    {
+                        ball_obj.powerShot();
+                        Manager.ClearPlayer2PowerBar();
+                    }
     }
-}
 
-   private void Update(){
-    if(Manager.getPlayerSelectNumber()==2){
+     private void FixedUpdate(){
+        
+             movement.move();  
+             if(Manager.getPlayerSelectNumber() == 2){
+                if(_direction.sqrMagnitude != 0 ){
+                    _rigidbody.AddForce(_direction * speed);
+                }   
+             }
+        }
 
-        if(Input.GetKey(KeyCode.UpArrow)){
-            _direction = Vector2.up;
-        }
-        else if(Input.GetKey(KeyCode.DownArrow)){
-            _direction = Vector2.down;
-        }
-        else{
-            _direction = Vector2.zero;
-        }
-    } 
-   }
 }

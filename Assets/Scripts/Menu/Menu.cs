@@ -9,10 +9,8 @@ public abstract class Menu:Interface
    public static bool GameIsPaused = false;
    public  GameManager Manager;
 
-   public void Restart(){
-        Manager.ResetGame();
-        Resume();
-    }
+   public abstract void Restart();
+        
 
     public void Quit(){
          Resume();

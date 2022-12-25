@@ -25,7 +25,7 @@ public GameObject Winner_Menu_UI;
     }
 
     public void FixedUpdate(){
-        if(Manager.getPlayer2Score() == 2|| Manager.getPlayer1Score() == 2){
+        if(Manager.getPlayer2Score() == 5|| Manager.getPlayer1Score() == 5){
             Manager.ball.gameObject.SetActive(false);
             Pause();
             makeGameWinnerMenu();
@@ -37,6 +37,11 @@ public GameObject Winner_Menu_UI;
         this.Player1_score.text = Manager.getPlayer1Score().ToString();
         this.Player2_score.text = Manager.getPlayer2Score().ToString();
         this.game_Winner.text = Manager.getGameWinner();
+    }
+
+    public override void Restart(){
+        Manager.ResetGame();
+        Resume();
     }
 
 

@@ -8,6 +8,11 @@ public class Ball : MonoBehaviour
 
   private float BallSpeed = 100.0f;
 
+  private bool ballPower = false;
+  private bool isPowerShot = false;
+
+  
+
   private void Awake(){
     _rigidbody = GetComponent<Rigidbody2D>();
   }
@@ -36,6 +41,40 @@ public class Ball : MonoBehaviour
     _rigidbody.position = Vector3.zero;
     _rigidbody.velocity = Vector3.zero;
   }
+
+  public void powerShot(){
+    ballPower = true;
+
+  }
+
+  public Rigidbody2D GetRigidbody2D(){
+    return _rigidbody;
+  }
+
+ 
+
+  public bool getPowerReady(){
+    return ballPower;
+  }
+
+   public void setPowerReadyFalse(){
+    ballPower = false;
+  }
+
+   public bool getIsPowerShot(){
+    return isPowerShot;
+  }
+
+   public void setIsPowerShot(bool isPower){
+    isPowerShot = isPower;
+  }
+
+  public void resetBallSettings(){
+    ballPower = false;
+    isPowerShot = false;
+  }
+
+
 
 
 }
