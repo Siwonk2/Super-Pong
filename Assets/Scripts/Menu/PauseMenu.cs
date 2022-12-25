@@ -26,7 +26,7 @@ public class PauseMenu : Menu
 }
 
 public override void Resume()
-    {   Debug.Log("yo");
+    {  
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;

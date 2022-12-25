@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
      public BouncySurface Player2Paddle_Bouncey;
 
+     public Game_Winner_Menu winner_Menu;
+
 
     private int _player1_Score;
     private int _player2_Score;
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour
         this.Player1Score.text = _player1_Score.ToString();
         if(_player1_Score == 5){
             GameWinner = "PLAYER 1 WINS!";
+            winner_Menu.ShowWinner();
             return;
         }
        ResetGameState(false);
@@ -76,6 +79,7 @@ public class GameManager : MonoBehaviour
             else{
             GameWinner = "Player 2 WINS!";
             }
+            winner_Menu.ShowWinner();
             return;
         }
         ResetGameState(false);
@@ -105,6 +109,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void ResetGameScore(){
+        _player1_Score = 0;
+        _player2_Score = 0;
         this.Player1Score.text = _player1_Score.ToString();
         this.Player2Score.text = _player2_Score.ToString();
     }

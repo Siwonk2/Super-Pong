@@ -24,13 +24,11 @@ public GameObject Winner_Menu_UI;
         GameIsPaused = true;
     }
 
-    public void FixedUpdate(){
-        if(Manager.getPlayer2Score() == 5|| Manager.getPlayer1Score() == 5){
-            Manager.ball.gameObject.SetActive(false);
-            Pause();
-            makeGameWinnerMenu();
-            Winner_Menu_UI.SetActive(true);
-        }
+    public void ShowWinner(){
+        Manager.ball.gameObject.SetActive(false);
+        Pause();
+        makeGameWinnerMenu();
+        Winner_Menu_UI.SetActive(true);
     }
 
     private void makeGameWinnerMenu(){

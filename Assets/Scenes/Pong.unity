@@ -489,6 +489,7 @@ MonoBehaviour:
   Power_bar_P2: {fileID: 534745067}
   Player1Paddle_Bouncey: {fileID: 867191122}
   Player2Paddle_Bouncey: {fileID: 868631781}
+  winner_Menu: {fileID: 482246174}
 --- !u!4 &254986755
 Transform:
   m_ObjectHideFlags: 0
