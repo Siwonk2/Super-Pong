@@ -24,7 +24,7 @@ power shot!
 ![PauseMenu](https://github.com/Siwonk2/Super-Pong/blob/master/images/pausemenu.PNG)
 
 # Gameplay
-![GamePlay](https://github.com/Siwonk2/Super-Pong/blob/master/images/gameplaypong.mp4)
+![GamePlay](https://github.com/Siwonk2/Super-Pong/blob/master/images/gameplay.gif)
 
 ## Demo
 Try the game yourself! -->
