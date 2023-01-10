@@ -14,13 +14,16 @@ power shot!
 
 ## Gameplay
 
-#Main Menu
+# Main Menu
 ![MainMenu](https://github.com/Siwonk2/Super-Pong/blob/master/images/mainmenu.PNG)
-#Player Select Menu
+
+# Player Select Menu
 ![PlayerSelectMenu](https://github.com/Siwonk2/Super-Pong/blob/master/images/Player_select.PNG)
-#Pause Menu
+
+# Pause Menu
 ![PauseMenu](https://github.com/Siwonk2/Super-Pong/blob/master/images/pausemenu.PNG)
-#Gameplay
+
+# Gameplay
 ![GamePlay](https://github.com/Siwonk2/Super-Pong/blob/master/images/pausemenu.PNG)
 
 ## Demo
