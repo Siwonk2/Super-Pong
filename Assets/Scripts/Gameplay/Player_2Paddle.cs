@@ -7,7 +7,6 @@ public class Player_2Paddle : Paddle
 
     private Player_2Movement movement;
 
-    private int frames = 0;
 
     public override void Awake()
     {
@@ -20,21 +19,34 @@ public class Player_2Paddle : Paddle
     }
 
     private void Update(){
-         if(Input.GetKeyDown(KeyCode.M) && (ball.transform.position.x > 7.0f) && (ball.velocity.x > 0.0f) && Manager.get_Player_2_power_ready() == true)
-                    {
-                        ball_obj.powerShot();
-                        Manager.ClearPlayer2PowerBar();
-                    }
+        if(Manager.getPlayerSelectNumber() == 2){
+            if(Input.GetKeyDown(KeyCode.M) && (ball.transform.position.x > 7.0f) && (ball.velocity.x > 0.0f) && Manager.get_Player_2_power_ready() == true)
+                {
+                    ball_obj.powerShot();
+                    Manager.ClearPlayer2PowerBar();
+                }
+            }
+         if(Manager.getPlayerSelectNumber() == 1){
+            bool usePower = false;
+            int random = Random.Range(0,100);
+            if(random == 0){
+                usePower = true;
+            }
+            if((ball.transform.position.x > 7.0f) && (ball.velocity.x > 0.0f) && Manager.get_Player_2_power_ready() == true && usePower){
+                ball_obj.powerShot();
+                Manager.ClearPlayer2PowerBar();
+            }
+         }
     }
 
      private void FixedUpdate(){
-        
-             movement.move();  
              if(Manager.getPlayerSelectNumber() == 2){
+                 movement.move(); 
                 if(_direction.sqrMagnitude != 0 ){
                     _rigidbody.AddForce(_direction * speed);
                 }   
              }
+             
         }
 
 }

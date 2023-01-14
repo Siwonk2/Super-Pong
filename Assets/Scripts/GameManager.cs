@@ -45,9 +45,10 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Player_1Paddle").SetActive(true);
         GameObject.Find("Player_2Paddle").SetActive(true);
         if(getPlayerSelectNumber()==1){
-        Player2Paddle.setMovement(new Player_2MovementSingle());
+        Player2Paddle.GetComponent<MoveToBallAgent>().enabled = true;
         }
-        else if(getPlayerSelectNumber()==2){
+        if(getPlayerSelectNumber()==2){
+        Player2Paddle.GetComponent<MoveToBallAgent>().enabled = false;
         Player2Paddle.setMovement(new Player_2MovementMultiplayer());
         }
         _player1_power = -1;

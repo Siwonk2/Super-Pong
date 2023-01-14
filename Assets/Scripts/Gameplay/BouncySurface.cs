@@ -39,10 +39,10 @@ public class BouncySurface : MonoBehaviour
         
         
         if(tag == "Ceiling"){
-            //FindObjectOfType<AudioManager>().play("Bounce_Wall");
+            FindObjectOfType<AudioManager>().play("Bounce_Wall");
         }
         else if(tag == "Paddle"){
-            //FindObjectOfType<AudioManager>().play("Bounce_Paddle");
+            FindObjectOfType<AudioManager>().play("Bounce_Paddle");
         }
         
     }

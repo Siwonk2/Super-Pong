@@ -24,9 +24,8 @@ public class PowerBar : MonoBehaviour
     public void emptyPowerBar(){
 
         for(int i = 0; i < PowerPoint.Length; i++)
-            PowerPoint[i].gameObject.SetActive(false);
-            
-}
+            PowerPoint[i].gameObject.SetActive(false);  
+    }
 }
 
 
